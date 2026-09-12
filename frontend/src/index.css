@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F5F5F7;
+  --color-ink: #1D1D1F;
+  --color-muted: #6E6E73;
+  --color-accent: #0071E3;
+  --color-emergency: #FF3B30;
+  --color-success: #34C759;
+  --color-divider: #D2D2D7;
+}
+
+.dark {
+  --color-bg: #000000;
+  --color-bg-secondary: #161617;
+  --color-ink: #F5F5F7;
+  --color-muted: #86868B;
+  --color-accent: #2997FF;
+  --color-emergency: #FF453A;
+  --color-success: #30D158;
+  --color-divider: #333336;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  /* Single typeface with tabular-nums for numeric precision */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "cv02" 1, "cv03" 1, "cv04" 1;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+/* Apple Frosted Glass Header */
+.frosted-glass {
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.dark .frosted-glass {
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hairline dividers */
+.hairline-b {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--color-divider);
+}
+
+/* Smooth Apple expanding pulse */
+.apple-pulse-ring-1 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  animation: pulseApple 3s cubic-bezier(0.28, 0.11, 0.32, 1) infinite;
+}
+
+.apple-pulse-ring-2 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  animation: pulseApple 3s cubic-bezier(0.28, 0.11, 0.32, 1) infinite;
+  animation-delay: 1s;
+}
+
+.apple-pulse-ring-3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  animation: pulseApple 3s cubic-bezier(0.28, 0.11, 0.32, 1) infinite;
+  animation-delay: 2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

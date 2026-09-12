@@ -1,0 +1,40 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+*.env
+*.env.save
+
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Database files & logs
+data/
+*.log
+error.log
+
+# Uploads & User Generated Files
+uploads/
+backend/uploads/
+backend/uploads/prescriptions/*
+!backend/uploads/prescriptions/.gitkeep
+
+# Large binary files
+*.traineddata
+backend/eng.traineddata
+
+# Build outputs
+dist/
+build/
+.vite/
+frontend/dist/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*~
+*.swp
